@@ -9,6 +9,10 @@ describe("pokerHand", function () {
         var pokerHands = new poker_hands_1.Hand();
         expect(pokerHands.pokerHand('2H, 5H, 6H, 3H, 8H')).toEqual(['2H', '3H', '5H', '6H', '8H']);
     });
+    it('should sort a hand low to high with face cards', function () {
+        var pokerHands = new poker_hands_1.Hand();
+        expect(pokerHands.pokerHand('2H, 5H, 6H, KH, QH')).toEqual(['2H', '5H', '6H', 'QH', 'KH']);
+    });
     it('should give values to the king', function () {
         var card = new poker_hands_1.Card();
         expect(card.getValue('KH')).toEqual(13);
